@@ -1,0 +1,15 @@
+<h2 align="center"><u>Login</u></h2>
+<br/>
+<div class="container" align="center" ng-controller="TestCtrl">
+    <label for="userId"><b>UserName:</b></label>
+    <input #userId type="text" placeholder="Enter Username" name="userId" required [(ngModel)]="usercredentials.userName">
+<br/><br/>
+    <label for="psw"><b>Password:</b></label>
+    <input #psw type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="usercredentials.password">
+<br/><br/>
+<div align="center">{{message}}</div>
+     <button (click)="login(usercredentials)" type="button">Login</button>
+     <br/><br/>
+     <div *ngIf="userType == 'user'"><button (click)="signup()" type="button">SignUp</button></div>
+     </div>
+

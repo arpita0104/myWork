@@ -1,0 +1,18 @@
+
+<h2 align="center"><u>Signup!</u></h2>
+<br/>
+<div class="container" align="center" ng-controller="TestCtrl">
+    <label for="userName"><b>UserName:   </b></label>
+    <input #userName type="text" placeholder="Enter Username" name="userName" required [(ngModel)]="usercredentials.userName">
+<br/><br/>
+    <label for="password"><b>Password:    </b></label>
+   <input #password type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="usercredentials.password">
+    
+    <br/><br/>
+    <label for="confirmPassword"><b>Confirm Password:</b></label>
+    <input #confirmPassword type="password" placeholder="Enter Password" name="confirmPassword" required [(ngModel)]="usercredentials.confirmPassword">
+    <div align="centre">{{message}}</div>
+<br/><br/>
+<button (click)="signup(usercredentials)" type="button">SignUp</button>
+</div>
+

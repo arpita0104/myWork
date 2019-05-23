@@ -1,0 +1,34 @@
+<h2 align="center">Welcome Admin !</h2>
+
+<div class="container" align="center">
+    <table border="1" class="table table-striped">
+      <thead>
+          <tr>
+            <th style="width:130px">User ID</th>
+            <th style="width:130px">First Name</th>
+            <th style="width:130px">Last Name</th>
+            <th style="width:130px">Contact No</th>
+            <th style="width:130px">Status</th>
+            <th style="width:250px">Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let guestdetail of guestlist">
+          <td>{{ guestdetail.userId }}</td>
+          <td>{{ guestdetail.firstName }}</td>
+          <td>{{ guestdetail.lastName }}</td>
+          <td>{{ guestdetail.contactNo }}</td>
+          <td>{{ guestdetail.confirmationStatus }}</td>
+          <td>
+           <div *ngIf ="guestdetail.confirmationStatus == 'Pending Confirmation'"> 
+               <button (click)="approve(guestdetail)" type="button">Approve</button>
+               <button (click)="reject(guestdetail)" type="button">Reject</button>
+            </div>
+          </td>
+          <td *ngIf="guestlist.length ==0">No Guest entry.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div aign ="center">{{message}}</div>
+  </div>

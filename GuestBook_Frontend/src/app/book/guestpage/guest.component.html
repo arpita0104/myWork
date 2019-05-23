@@ -1,0 +1,22 @@
+<div class="alert alert-success" role="alert" align="center">{{this.msg}}</div>
+<div *ngIf ="showMsg==false">
+<h2 align="center">Guest Registration!</h2>
+<h4 align="center">Plese provide below details for registration!</h4>
+<br/>
+<div class="container" align="center">
+    <label for="userName"><b>UserName:</b></label>
+    <input #userName type="text" name="userName" [(ngModel)]="guestbook.userName" ng-required="true" disabled>
+<br/><br/>
+    <label for="firstName"><b>First Name:</b></label>
+    <input #firstName type="text" placeholder="Enter First Name" name="firstName" [(ngModel)]="guestbook.firstName" ng-required="true">
+<br/><br/>
+<label for="lastName"><b>Last Name:</b></label>
+<input #lastName type="text" placeholder="Enter Last Name" name="lastName" [(ngModel)]="guestbook.lastName" ng-required="true">
+<br/><br/>
+<label for="contactNo"><b>Contact No:</b></label>
+<input #contactNo type="text" placeholder="Enter Contact No" name="contactNo" [(ngModel)]="guestbook.contactNo" ng-required="true">
+ <br/><br/>
+     <button (click)="register(guestbook.userName,guestbook.firstName,guestbook.lastName,guestbook.contactNo)"
+      type="button">Register</button>
+</div>
+</div>
